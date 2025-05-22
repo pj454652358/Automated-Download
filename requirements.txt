@@ -1,3 +1,4 @@
 pypiserver
 fastapi
 uvicorn
+sqlmodel
