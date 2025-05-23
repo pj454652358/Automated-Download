@@ -1,68 +1,50 @@
 #!/bin/bash
-# 下载Windows x64平台WHL包及其依赖的自动化脚本
 
-# 配置区
-TARGET_DIR="./offline-packages"    # 下载目录
-INPUT_FILE="./requirements.txt"    # 输入文件路径
-PYTHON_CMD="python3"              # Python命令路径
-PIP_CMD="pip3"                    # Pip命令路径
-PLATFORM="win_amd64"              # 目标平台（Windows 64位）
+# 设置输出目录
+OUTPUT_DIR="offline-packages"
+mkdir -p "$OUTPUT_DIR"
 
-# 动态获取Python版本和ABI标签
-PYTHON_VERSION=$($PYTHON_CMD -c "import sys; print(f'{sys.version_info.major}{sys.version_info.minor}')")
-ABI_TAG="cp$PYTHON_VERSION"
-
-# 创建下载目录
-mkdir -p "$TARGET_DIR"
-
-# 验证输入文件存在
-if [ ! -f "$INPUT_FILE" ]; then
-    echo "[错误] 输入文件 $INPUT_FILE 不存在"
-    exit 1
+# 检查 requirements.txt 是否存在
+if [ ! -f "requirements.txt" ]; then
+  echo "requirements.txt 不存在"
+  exit 1
 fi
 
-# 逐行处理WHL名称
-while IFS= read -r package || [ -n "$package" ]
-do
-    if [[ -z "$package" || "$package" == \#* ]]; then
-        continue
+# 逐行读取 requirements.txt
+while IFS= read -r package; do
+  if [ -n "$package" ]; then
+    # 提取包名（去掉版本号）
+    pkg_name=$(echo "$package" | cut -d'=' -f1)
+    echo "处理包: $pkg_name"
+    
+    # 跳过 pip 包
+    if [ "$pkg_name" = "pip" ]; then
+      echo "跳过 pip 包"
+      continue
     fi
     
-    echo "▸ 正在处理 $package ..."
+    # 生成依赖树，排除 conda 和 conda-libmamba-solver
+    pipdeptree -r -p "$pkg_name" | grep -v -E "conda|libmamba" > temp_deps.txt 2>/dev/null
     
-    # 下载主包及其依赖（强制Windows x64）
-    if ! $PIP_CMD download \
-        --disable-pip-version-check \
-        --platform "$PLATFORM" \
-        --python-version "$PYTHON_VERSION" \
-        --abi "$ABI_TAG" \
-        --only-binary=:all: \
-        --dest "$TARGET_DIR" \
-        --no-cache-dir \
-        --pre \
-        --retries 3 \
-        --timeout 60 \
-        "$package" 2>&1 | grep -v "already satisfied"; then
-        
-        echo "[警告] $package 下载失败，尝试从Gohlke镜像重试..."
-        $PIP_CMD download \
-            --disable-pip-version-check \
-            --platform "$PLATFORM" \
-            --python-version "$PYTHON_VERSION" \
-            --abi "$ABI_TAG" \
-            --only-binary=:all: \
-            --dest "$TARGET_DIR" \
-            --no-cache-dir \
-            --pre \
-            --retries 1 \
-            --timeout 30 \
-            -i https://download.gohlke.de/python/ \
-            "$package"
+    # 检查依赖树是否生成
+    if [ ! -s temp_deps.txt ]; then
+      echo "无法生成 $pkg_name 的依赖树，跳过"
+      continue
     fi
-done < "$INPUT_FILE"
+    
+    # 下载包及其依赖，适配 Windows 64 位和 Python 3.12.3
+    pip download -r temp_deps.txt -d "$OUTPUT_DIR" --only-binary=:all: --platform win_amd64 --python-version 3.12.3
+    
+    # 验证下载
+    if [ $? -eq 0 ]; then
+      echo "$pkg_name 及其依赖已下载到 $OUTPUT_DIR"
+    else
+      echo "$pkg_name 下载失败"
+    fi
+    
+    # 清理临时文件
+    rm temp_deps.txt
+  fi
+done < requirements.txt
 
-# 生成依赖清单
-echo "生成依赖清单..."
-$PIP_CMD freeze > "$TARGET_DIR/dependencies.lock"
-
-echo "全部下载完成！文件保存在：$(realpath $TARGET_DIR)"
+echo "所有包下载完成，保存在 $OUTPUT_DIR"
