@@ -11,7 +11,7 @@ if [ ! -f "requirements.txt" ]; then
 fi
 
 # 逐行读取 requirements.txt
-while IFS= read -r package; do
+while IFS= read -r package || [ -n "$package" ]; do
   if [ -n "$package" ]; then
     # 提取包名（去掉版本号）
     pkg_name=$(echo "$package" | cut -d'=' -f1)
@@ -37,9 +37,9 @@ while IFS= read -r package; do
     
     # 验证下载
     if [ $? -eq 0 ]; then
-      echo "$pkg_name 及其依赖已下载到 $OUTPUT_DIR"
+      echo -e "$pkg_name 及其依赖已下载到 $OUTPUT_DIR\n"
     else
-      echo "$pkg_name 下载失败"
+      echo -e "$pkg_name 下载失败\n"
     fi
     
     # 清理临时文件
