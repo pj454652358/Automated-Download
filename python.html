@@ -1,0 +1,1541 @@
+
+
+<html lang="en-us">
+
+<head>
+     <meta name="description" content="Extension&#32;for&#32;Visual&#32;Studio&#32;Code&#32;-&#32;Python&#32;language&#32;support&#32;with&#32;extension&#32;access&#32;points&#32;for&#32;IntelliSense&#32;(Pylance),&#32;Debugging&#32;(Python&#32;Debugger),&#32;linting,&#32;formatting,&#32;refactoring,&#32;unit&#32;tests,&#32;and&#32;more." /><meta name="keywords" content="__ext_j2,__ext_jinja2,__web_extension,debuggers,django,ini,jinja,json,keybindings,language-model-tools,linters,multi-root&#32;ready,pip&#32;requirements,pip-requirements,python,requirements.txt,toml,tools,unittest,yaml" /><meta property="og:title" content="Python&#32;-&#32;Visual&#32;Studio&#32;Marketplace" /><meta property="og:type" content="website" /><meta property="og:url" content="https://marketplace.visualstudio.com/items?itemName=ms-python.python" /><meta property="og:image" content="https://ms-python.gallerycdn.vsassets.io/extensions/ms-python/python/2025.7.2025052301/1747996986120/Microsoft.VisualStudio.Services.Icons.Default" /><meta property="og:description" content="Extension&#32;for&#32;Visual&#32;Studio&#32;Code&#32;-&#32;Python&#32;language&#32;support&#32;with&#32;extension&#32;access&#32;points&#32;for&#32;IntelliSense&#32;(Pylance),&#32;Debugging&#32;(Python&#32;Debugger),&#32;linting,&#32;formatting,&#32;refactoring,&#32;unit&#32;tests,&#32;and&#32;more." /><meta property="twitter:card" content="summary" /><meta property="twitter:site" content="@Code" /><link rel="canonical" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python" />
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+        body {
+            font-family: wf_segoe-ui, Helvetica Neue, Helvetica, Arial, Verdana;
+        	color: rgba( 0, 0, 0, 1);
+        	font-size: 12px;
+        	background-color: rgba(255, 255, 255, 1);
+        	margin: 0;
+        	padding: 0;
+        }
+
+/* L0 header styles start*/
+        .uxservices-header {
+            height: 34px;
+            background-color:black;
+        }
+
+        a.skip-main {
+            left: -999px;
+            position: absolute;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: -999;
+        }
+
+        a.skip-main:focus, a.skip-main:active {
+            color: #0078D4;
+            background-color: #FFFFFF;
+            position: absolute;
+            left: auto;
+            top: auto;
+            width: 122px;
+            height: 33px;
+            overflow: auto;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-top: 7px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Segoe UI';
+            line-height: 20px;
+            z-index: 999;
+        }
+
+        a.skip-main:hover {
+            color: #005BA1;
+            background-color: #F2F2F2;
+        }
+
+        .uxservices-header div.upperBandContent {
+            background-color:black;
+            color: white;
+            line-height: 17px;
+            width:100%;
+            margin:0 auto;
+            box-sizing:border-box;
+            max-width: 1160px;
+            padding: 0px;
+        }
+
+        .uxservices-header div.upperBandContent .left {
+            padding: 5px 0 0 0;
+        }
+
+        .uxservices-header div.upperBandContent .left .vs-logo-header {
+            height: 31px;
+            padding-top: 5px;
+        }
+
+        .uxservices-header div.upperBandContent .left .marketplacetext-header {
+            vertical-align: 9px;
+            padding-top: 5px;
+        }
+
+        .uxservices-header div.upperBandContent .right {
+            display: inline-block;
+            position: relative;
+            background-color: black;
+            font-size: 11px;
+            padding-top: 10px;
+        }
+
+        .uxservices-header div.upperBandContent .right .signIn {
+            font-weight: 600;
+            float: left;
+        }
+
+        .uxservices-header .marketPlaceLogoLink {
+            white-space: pre;
+            font-size: 16px;
+            line-height: 16px;
+            vertical-align: -4px;
+            display: inline-block;
+            color: white;
+        }
+
+        .uxservices-header .marketPlaceLogoLink.vs-brand-icon {
+            width: 30px;
+            height: 30px;
+            background: url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Header/ImageSprite.png) no-repeat -250px 0 !important;
+        }
+
+        .uxservices-header .right a {
+            font-family: wf_segoe-ui, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Helvetica Neue", "Lucida Grande", sans-serif;
+            font-size: inherit;
+        }
+
+        .uxservices-header div.upperBandContent .scarabLink {
+            margin-right: 0.23em;
+        }
+
+        #Fragment_SearchBox {
+            display: inline-block;
+            margin-left: 25px;
+            height: 13px;
+        }
+
+        #Fragment_SearchBox .header-search-button {
+            height: 20px;
+            width: 20px;
+            background: url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Header/ImageSprite.png) no-repeat -195px 0 !important;
+            cursor: pointer;
+            border: none;
+            margin-left: 3px;
+            padding: 0px;
+        }
+
+        #Fragment_SearchBox .header-search-button:focus {
+            outline-color: rgb(77, 144, 254);
+            outline-style: auto;
+            outline-width: 5px;
+        }
+
+        #Fragment_SearchBox .header-search-textbox {
+            vertical-align: top;
+            background-color: #6a6a6a;
+            color: #ffffff;
+            padding-left: 2px;
+        }
+
+        
+/* l0 header ends*/
+
+        .tab {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+            background-color: transparent;
+            margin-bottom: 25px;
+        }
+
+/* Style the buttons that are used to open the tab content */
+        .tab button {
+            background-color: transparent;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0px 16px;
+            font-size: 16px;
+            height: 40px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: transparent
+        }
+
+/* Change background color of buttons on hover */
+        .tab button:hover {
+            color: #106ebe;
+        }
+
+        .tab button.selected {
+            color: #106ebe;
+            border-bottom: 2px solid #106ebe;
+        }
+
+        .tab button:focus, .tab button.selected:focus {
+            border-color: #000000;
+        }
+
+/* Style the tab content */
+        .tabcontent {
+            padding: 6px 12px;
+        }
+
+        .bowtie-icon,
+        i.bowtie-icon {
+        	font-family: "Bowtie";
+        	font-size: 14px;
+        	speak: none;
+        	display: inline-block;
+        	font-style: normal;
+        	font-weight: normal;
+        	font-variant: normal;
+        	text-transform: none;
+        	text-align: center;
+        	text-decoration: none;
+        	line-height: 16px;
+        	-webkit-font-smoothing: antialiased;
+        	-moz-osx-font-smoothing: grayscale;
+        }
+
+        .bowtie-icon:disabled,
+        i.bowtie-icon:disabled {
+        	opacity: 0.5;
+        }
+
+        .bowtie-brand-visualstudio::before {
+	        content: "\E91D";
+        }
+
+        .bowtie-install::before {
+        	content: "\E92C";
+        }
+
+        .bowtie-search::before {
+        	content: "\E986";
+        }
+
+        .bowtie-navigate-external::before {
+        	content: "\E9D0";
+        }
+
+        .bowtie-status-info::before {
+        	content: "\EA08";
+        }
+
+        .bowtie-status-info {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-background, rgba(0, 120, 212, 1));
+        }
+
+        * {
+        	box-sizing: border-box;
+        	-webkit-box-sizing: border-box;
+        	-moz-box-sizing: border-box;
+        }
+
+        a:not(.ms-Button) {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-foreground, rgba(0, 120, 212, 1));
+        	text-decoration: none;
+        	cursor: pointer;
+        }
+
+        a:not(.ms-Button):hover {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-foreground, rgba(0, 120, 212, 1));
+        	text-decoration: underline;
+        }
+
+        a:not(.ms-Button):visited {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-foreground, rgba(0, 120, 212, 1));
+        }
+
+        a:not(.ms-Button):active {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-foreground, rgba(0, 120, 212, 1));
+        }
+
+        button {
+        	font-family: "Segoe UI VSS (Regular)", "Segoe UI", "-apple-system", BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        	height: 30px;
+        	border: 1px solid;
+        	border-color: rgba( 200, 200, 200, 1);
+        	border-color: rgba( var(--palette-neutral-20, 200, 200, 200), 1);
+        	background-color: rgba( 248, 248, 248, 1);
+        	background-color: rgba( var(--palette-neutral-2, 248, 248, 248), 1);
+        	color: rgba( 51, 51, 51, 1);
+        	color: rgba( var(--palette-neutral-80, 51, 51, 51), 1);
+        	cursor: pointer;
+        	outline: 0;
+        	padding: 2px 12px 2px 12px;
+        }
+
+        button:hover:not(.ms-Button):not(.bolt-button):not(.link-as-button),
+        button:focus:not(.ms-Button):not(.bolt-button):not(.link-as-button) {
+        	border-color: rgba( 166, 166, 166, 1);
+        	border-color: rgba( var(--palette-neutral-30, 166, 166, 166), 1);
+            border-style: dotted;
+        }
+
+        .pricingTab-loader-container, .qnaTab-loader-container, .rnrTab-loader-container, .versionHistoryTab-loader-container {
+            text-align: center;
+        }
+
+        .pricingTab-loader-container .loader, .qnaTab-loader-container .loader, .rnrTab-loader-container .loader, .versionHistoryTab-loader-container .loader {
+            display: inline-block;
+        }
+        .item-details-control-root .ux-section-resources ul li a {
+            text-decoration:underline!important;
+        }
+/* Styles for bread crumb */
+        .bread-crumb-container {
+        	font-size: 13px;
+        	color: #FFFFFF;
+        	height: 45px;
+        	line-height: 45px;
+        }
+
+        .bread-crumb-container .member {
+        	text-decoration: none;
+        }
+
+        .bread-crumb-container .separator {
+        	padding: 0 5px;
+        }
+
+        .bread-crumb-container a:visited {
+        	color: #FFFFFF;
+        }
+
+        .bread-crumb-container a {
+        	color: #FFFFFF;
+        }
+
+        .bread-crumb-container a:hover {
+        	color: #FFFFFF;
+        }
+
+        .item-details-control-root .breadcrumb {
+        	background-color: #232323;
+        	color: #FFFFFF;
+        	line-height: 45px;
+        	font-size: 13px;
+        	/* min-width: 1250px; */
+        }
+
+        .item-details-control-root .breadcrumb .vsCodeDownloadLinkContainer {
+            float: right;
+            color: inherit;
+        }
+
+        .item-details-control-root .breadcrumb .vsCodeDownloadLink {
+            color: #0090ff;
+        }
+
+/* end of bread crumb styles */
+
+/* Styles for item banner */
+        .ux-section-banner {
+        	padding: 16px 0px;
+        	background-color: #eff1f3;
+        	/* min-width: 1250px; */
+        }
+
+        .item-details-control-root .ux-section-banner {
+        	padding: 32px 0px;
+        	background-color: #eff1f3;
+        }
+
+        .gallery-centered-content {
+        	width: 1160px;
+        	margin-left: auto;
+        	margin-right: auto;
+        	padding-left: 10px;
+        	padding-right: 10px;
+        }
+      @media all and (max-width:1165px){
+            .gallery-centered-content{
+                width:100%;
+                padding-left:25px;
+                padding-right:25px;
+            }
+        }
+        table {
+        	border-collapse: collapse;
+        	border-spacing: 0;
+        	margin: 0;
+        	padding: 0;
+        	border: 0;
+        }
+
+        .item-details-control-root .item-img {
+        	text-align: center;
+        	vertical-align: top;
+        	width: 132px;
+        }
+
+        .item-details-control-root .item-img img {
+        	max-width: 128px;
+        	position: relative;
+        	visibility: hidden;
+        }
+
+        .item-details-control-root .item-header .item-header-content {
+        	font-size: 14px;
+        	margin-left: 32px;
+        }
+
+        .item-details-control-root .ux-item-name {
+        	font-size: 26px;
+        	font-weight: 600;
+        	display: inline-block;
+        	padding-right: 8px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper {
+        	margin-top: 4px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper>div {
+        	display: inline-block;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper>div:nth-child(1) {
+        	margin-right: 10px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper>.ux-item-rating {
+        	margin-left: 10px;
+        	margin-right: 10px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper>.item-price-category {
+        	margin-left: 10px;
+        	margin-right: 10px;
+        }
+
+        .item-details-control-root .item-header h1,
+        .item-details-control-root .item-header h2 {
+        	margin: 0px;
+        	padding: 0px;
+        	display: inline-block;
+        	font-size: 0em;
+        	font-weight: normal;
+        }
+
+        .item-details-control-root .item-header .dark {
+        	color: #FFFFFF;
+        }
+
+        .item-details-control-root .ux-item-rating {
+        	font-size: 14px;
+        }
+        .item-details-control-root .ux-item-publisher {
+        	font-size: 18px;
+        }
+
+        .item-details-control-root .ux-item-publisher-link {
+        	font-size: 18px;
+        	font-weight: 600;
+        }
+
+        .item-details-control-root .ux-item-shortdesc {
+        	margin: 20px 0;
+        	max-width: 608px;
+        	line-height: 1.5;
+        	overflow: hidden;
+        }
+
+        .item-details-control-root .dark .item-banner-focussable-child-item:focus {
+        	outline: 1px dotted white;
+        }
+
+        .item-details-control-root .item-header .item-header-content.light .installHelpInfo a {
+            color: #000000;
+            text-decoration: underline;
+            border-color: #000000;
+        }
+
+        .item-details-control-root .item-header .item-header-content.dark .installHelpInfo a {
+        	color: #FFFFFF;
+        	text-decoration: underline;
+        }
+
+        .ux-section-details-tabs .version-history-top-container {
+            width: 100%
+        }
+
+/* not unpublished */
+        
+            .item-details-control-root .ux-button.install {
+                position: relative;
+                font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                font-size: 14px;
+                font-weight: 400;
+                box-sizing: border-box;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+                vertical-align: top;
+                padding-top: 0px;
+                padding-right: 16px;
+                padding-bottom: 0px;
+                padding-left: 16px;
+                min-width: 80px;
+                height: 32px;
+                background-color: rgb(244, 244, 244);
+                color: rgb(51, 51, 51);
+                user-select: none;
+                outline: transparent;
+                border-width: 1px;
+                border-style: solid;
+                border-color: transparent;
+                border-image: initial;
+                text-decoration: none;
+                border-radius: 0px;
+            }
+
+            .item-details-control-root .item-header-content .install-button-container .ux-button.install.buttonDisabled {
+                background-color: #AAAAAA;
+                color: #EEEEEE;
+                opacity: 1;
+                border: 1px solid #E6E6E6;
+            }
+
+            .item-details-control-root .item-header-content .install-button-container .ux-button.install.buttonDisabled:hover {
+                cursor: default;
+                opacity: 1;
+            }
+
+            .item-details-control-root .dark .ux-button.install {
+                background-color: #107c10;
+                color: #FFFFFF;
+                min-width: 120px;
+                border: 1px solid #FFFFFF;
+            }
+
+            .item-details-control-root .dark .ux-button.install:hover {
+                background-color: #AAAAAA;
+                opacity: 0.6;
+            }
+
+            .ux-item-action a.install-button-container {
+                line-height: 32px;
+            }
+
+            .item-details-control-root .light .ux-button.install {
+                background-color: #107c10;
+                color: #FFFFFF;
+                min-width: 120px;
+                border: 1px solid #666666;
+            }
+
+            .item-details-control-root .light .ux-button.install:hover,
+            .item-details-control-root .light .ux-button.install:focus {
+                background-color: #074507;
+            }
+
+            .item-details-control-root .dark .ux-button.install:focus,
+            .item-details-control-root .light .ux-button.install:focus {
+                border: 1px dotted;
+            }
+
+        
+            .vscode-install-title {
+                font-size: 16px;
+                font-weight: bold;
+                padding: 5px 0px;
+            }
+
+            .vscode-install-info-container {
+                font-size: 13px;
+                padding-top: 4px;
+            }
+
+            .vscode-command-container {
+                height: 35px;
+                padding: 1px 0px;
+                float: left;
+            }
+
+            .vscode-command-input {
+                padding: 2px;
+                height: 100%;
+                padding-left: 9px;
+                padding-right: 9px;
+                font-family: monospace;
+                border: 1px solid #a9a9a9;
+                float: left;
+                text-overflow: ellipsis;
+            }
+
+            .copy-to-clipboard-button {
+                height: 100%;
+                padding: 2px 14px 4px 14px;
+                margin-left: -1px;
+                border: 1px solid #a9a9a9;
+                border-radius: 0px;
+                float: left;
+                cursor: pointer;
+            }
+
+            .light .copy-to-clipboard-button:focus {
+                outline: 1px dotted #666;
+            }
+
+            .dark .copy-to-clipboard-button:focus {
+                outline: 1px dotted white;
+            }
+
+            .copied-display-div {
+                font-size: 11px;
+                background-color: #000000;
+                padding: 2px 4px;
+                color: #ffffff;
+                text-align: center;
+                border-radius: 5px;
+                border: 1px solid #ffffff;
+                width: 120px;
+                display: none;
+                position: absolute;
+                top: 35px;
+                right: -50px;
+            }
+
+            .copied-display-container {
+                float: left;
+                position: relative;
+            }
+
+            .vscode-moreinformation {
+                border-left: 1px solid;
+                margin-left: 15px;
+                padding-left: 10px;
+                float: left;
+                margin-top: 9px;
+            }
+
+            .vscode-moreinformation.dark {
+                color: inherit;
+                text-decoration: underline;
+            }
+
+            .vscode-moreinformation.light {
+                color: #007acc;
+                border-color: #000000;
+            }
+        
+/* End of item banner styles. */
+
+/* Styles for item details overview */
+        .item-details-control-root .ux-section-details {
+        	margin: 24px 0 34px 0px;
+        	font-size: 13px;
+        }
+
+        .item-details-control-root .ux-section-details .itemdetails-section-header {
+        	font-size: 16px;
+        	font-weight: bold;
+        	color: #555;
+        	padding-bottom: 16px;
+        }
+
+        .item-details-control-root .ux-section-details .ux-section-details-table {
+        	width: 100%;
+        	table-layout: fixed;
+        }
+
+        .item-details-control-root .ux-itemdetails-left {
+        	vertical-align: top;
+        	font-size: 14px;
+        	padding-right: 20px;
+        }
+
+        .item-details-control-root .ux-itemdetails-right {
+            width: 34.45%;
+            vertical-align: top;
+            padding: 0 0 0 20px;
+        }
+  @media all and (max-width:768px) {
+    .item-details-control-root .ux-itemdetails-left {
+        float: left;
+        width: 100%;
+        padding-right: 0px;
+    }
+    .item-details-control-root .ux-itemdetails-right{
+        padding-left:0px!important;
+        float:left;
+        width:100%;
+    }
+}
+
+        .item-details-control-root .itemDetails-right {
+            display: none;
+        }
+
+        .item-details-control-root .markdown {
+        	color: #222;
+        	line-height: 1.6;
+        	position: relative;
+        }
+
+        .gallery-centered-content .markdown a {
+            color: rgba(0, 120, 212, 1);
+            text-decoration:underline;
+        }
+
+        .markdown table tr:nth-child(2n) a, .gallery-centered-content .markdown a code {
+            color: rgb(15, 113, 196);
+        }
+
+        .item-details-control-root .markdown > *:first-child {
+        	margin-top: 0!important;
+        }
+
+        .item-details-control-root .markdown .link-header:target:before {
+        	content: "";
+        	display: block;
+        	height: 250px;
+        	margin: -250px 0 0;
+        }
+
+        .link-as-button {
+        	height: initial;
+        }
+
+        .link-as-button:hover {
+        	text-decoration: underline;
+        }
+
+        /* End of item details overview styles. */
+
+        /* Styles for footer */
+        #ux-footer {
+        	line-height: 1.2em;
+        }
+
+        #ux-footer:after {
+        	content: "";
+        	display: table;
+        	clear: both;
+        }
+
+        #ux-footer a {
+        	color: #595958;
+        }
+
+        #ux-footer a:hover {
+        	color: #3399ff;
+        }
+
+        #ux-footer ul.links {
+        	padding: 0;
+        	line-height: 1.2em;
+        }
+
+        #ux-footer .linkList>ul>li {
+        	list-style-type: none;
+        	background: none;
+        	padding: 4px 0;
+        	margin: 0;
+        }
+
+        #ux-footer #baseFooter {
+        	width: 1160px; 
+        	padding: 15px 10px;
+        	margin: 0 auto;
+        }
+        @media all and (max-width:1165px){
+            #ux-footer #baseFooter{
+                width:100%;
+                padding:15px 20px;
+            }
+        }
+        #ux-footer #baseFooter:after {
+        	content: "";
+        	display: table;
+        	clear: both;
+        }
+
+        #ux-footer #baseFooter li {
+        	display: inline-block;
+        	list-style-type: none;
+        	margin: 0 15px 0 0;
+        }
+
+        #ux-footer #baseFooter #Fragment_BaseFooterLinks {
+        	text-align: right;
+        }
+
+        #ux-footer #baseFooter #rightBaseFooter {
+        	float: right;
+        	width: 18%;
+        	font-family: wf_segoe-ui, Tahoma, Helvetica, Sans-Serif;
+        	color: #595958;
+        	font-weight: bold;
+        }
+
+        @media only screen and (max-width: 400px) {
+            #ux-footer #baseFooter #rightBaseFooter{
+                width:100%;
+                text-align: center;
+            }
+            .ux-section-banner td.item-img img {
+                width: 100% !important;
+            }
+        }
+
+        #ux-footer span.microsoftLogo {
+        	display: inline-block;
+        	margin-left: 16px;
+        }
+
+        .microsoftLogo {
+        	background: url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Header/ImageSprite.png) no-repeat -93px 0!important;
+        }
+
+        .microsoftLogo {
+        	width: 70px;
+        	height: 14px;
+        	overflow: hidden;
+        }
+
+        /* End of footer styles. */
+
+        /* Styles for markdown */
+        .markdown img {
+        	max-width: 100%;
+        }
+
+        .markdown video {
+            max-width: 100%;
+        }
+
+        .markdown h1,
+        .markdown h2 {
+        	line-height: 1.4;
+        	margin-top: 1em;
+        	margin-bottom: 16px;
+        }
+
+        .markdown h1 {
+        	font-size: 1.5em;
+        	line-height: 1.2em;
+        	border-bottom: 1px solid #eee;
+        	margin-top: 2em;
+        	padding-bottom: 10px;
+        }
+
+        .markdown h2 {
+        	font-size: 1.375em;
+        	line-height: 1.2em;
+        	border-bottom: 1px solid #eee;
+        	margin-top: 2em;
+        	padding-bottom: 10px;
+        }
+
+        .markdown h3 {
+        	font-size: 1.25em;
+        }
+
+        .markdown h4 {
+        	font-size: 1.125em;
+        }
+
+        .markdown h5 {
+        	font-size: 1.0em;
+        }
+
+        .markdown blockquote {
+            padding: 0 15px;
+            color: #777;
+            border-left: 4px solid #ddd;
+            margin: 0;
+        }
+
+        .markdown pre {
+            padding: 16px;
+            overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
+            background-color: #f7f7f7;
+            border-radius: 3px;
+            word-wrap: normal;
+            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+
+        .markdown code, .markdown tt {
+        	padding: 0;
+        	background-color: rgba(0, 0, 0, 0.04);
+        	margin: 0;
+        	padding-top: 0.2em;
+        	padding-bottom: 0.2em;
+        	border-radius: 3px;
+        	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+
+        .markdown pre > code {
+            background-color: inherit;
+        }
+
+        .markdown table {
+        	display: block;
+        	width: 100%;
+        	overflow: auto;
+        	word-break: normal;
+        	word-break: keep-all;
+        }
+
+        .markdown table th {
+        	font-weight: bold;
+        }
+
+        .markdown table th,
+        .markdown table td {
+        	padding: 6px 13px;
+        	border: 1px solid #ddd;
+        }
+
+        .markdown table tr {
+        	background-color: #fff;
+        	border-top: 1px solid #ccc;
+        }
+
+        .markdown table tr:nth-child(2n) {
+        	background-color: #f8f8f8;
+        }
+
+        /* End of markdown styles. */
+
+        .main-content.item-details-main-content {
+        	min-height: 950px;
+        }
+
+        .item-details-main-content {
+        	background-color: #FFFFFF;
+        }
+
+        .ms-Fabric {
+        	-moz-osx-font-smoothing: grayscale;
+        	-webkit-font-smoothing: antialiased;
+        	color: #333333;
+        	font-family: "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+        	font-size: 14px;
+        }
+
+        .ms-Fabric button {
+        	font-family: inherit;
+        }
+
+        .ux-section-details-tabs {
+            margin-top: -20px;
+        }
+
+         @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot");
+        	src: local("Segoe UI Light"), local("Segoe Light"), local("Segoe WP Light"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf") format("truetype");
+        	font-weight: 200;
+        	font-style: normal;
+        	-webkit-font-smoothing: antialiased;
+        }
+
+        #survey-container {
+            position: relative;
+            background-color: #f5ebc5;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        #survey-content-container {
+            margin: 0;
+            padding-left: 5%;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left:30%;
+            padding-right:15%;
+        }
+
+        #survey-content-text {
+            color: #000000 !important;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0;
+            font-family: Segoe UI, SegoeUI, Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        #survey-info-icon {
+            display: table-cell;
+            padding: 4px;
+            width: 24px;
+            height: 24px;
+            line-height: 0;
+            text-align: left;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.eot");
+        	src: local("Segoe UI Semilight"), local("Segoe Semilight"), local("Segoe WP Semilight"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf") format("truetype");
+        	font-weight: 300;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.eot");
+        	src: local("Segoe UI"), local("Segoe"), local("Segoe WP"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf") format("truetype");
+        	font-weight: normal;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.eot");
+        	src: local("Segoe UI Semibold"), local("Segoe Semibold"), local("Segoe WP Semibold"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.ttf") format("truetype");
+        	font-weight: 500;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.eot");
+        	src: local("Segoe UI Semibold"), local("Segoe Semibold"), local("Segoe WP Semibold"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.ttf") format("truetype");
+        	font-weight: 600;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.eot");
+        	src: local("Segoe UI Bold"), local("Segoe Bold"), local("Segoe WP Bold"), local("Segoe UI"), local("Segoe"), local("Segoe WP"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf") format("truetype");
+        	font-weight: bold;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui_light;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot");
+        	src: local("Segoe UI Light"), local("Segoe Light"), local("Segoe WP Light"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf") format("truetype");
+        	font-weight: normal;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: 'bowtie';
+        	font-style: normal;
+        	font-weight: normal;
+        	src: url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Fonts/Icons/bowtie.eot);
+        	src: url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Fonts/Icons/bowtie.eot?iefix) format("embedded-opentype"), url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Fonts/Icons/bowtie.woff) format("woff"), url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Fonts/Icons/bowtie.svg#bowtie) format("svg");
+        }
+
+        /*Sponsor start*/
+            @font-face {
+                font-family: AzureDevOpsMDL2Assets;
+                src: url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Fonts/Icons/AzDevMDL2.woff) format('woff');
+            }
+            .ux-item-sponsor-text {
+                background-color: #F1F1F1;
+                border: 1px solid #007ACC;
+                color: #000000;
+                padding: 5px 0px 5px 10px;
+            }
+
+            .ux-item-sponsor-heart-icon{
+                color: #B51E78;
+                padding: inherit;
+                padding-left: 6px;
+                font-weight: 600;
+                position: relative;
+                top: 3px;
+            }
+
+            .bowtie-heart-icon::before {
+        	 content: "\EB52";
+             font-family: AzureDevOpsMDL2Assets;
+            }
+
+            .bowtie-heart-icon {
+        	    color: rgba(0, 120, 212, 1);
+        	    color: var(--communication-background, rgba(0, 120, 212, 1));
+            }
+
+           .ux-sponsor-text-icon {
+            padding-left: 6px;
+            padding-right: 6px;
+           }
+
+        /*Sponsor style end*/
+
+        /* Verified Domain style begin */
+        
+            
+            @font-face {
+                font-family: AzureDevOpsMDL2Assets;
+                src: url(https://cdn.vsassets.io/v/M256_20250507.17/_content/Fonts/Icons/AzDevMDL2.woff) format('woff');
+            }
+
+            .ux-marketplace-verified-doamin-icon {
+                vertical-align: bottom;
+                display: flex;
+                flex-direction: row;
+                margin-right: 6px;
+                line-height: 17px;
+            }
+
+            .ux-marketplace-verified-doamin-icon .verified-domain-icon {
+                font-size: 17px;
+                color: rgba(0, 120, 212, 1);
+                height: 18px;
+                margin-right: 20px;
+                line-height: 13px;
+            }
+
+            .ux-marketplace-verified-doamin-icon .verified-domain-icon .verified-domain-icon-background {
+                color: #ffffff;
+                position: absolute;
+                display: inline-block;
+                -webkit-font-smoothing: antialiased;
+                font-family: AzureDevOpsMDL2Assets;
+                font-style: normal;
+                font-family: AzureDevOpsMDL2Assets;
+                font-style: normal;
+                line-height: 15px;
+            }
+
+            .ux-marketplace-verified-doamin-icon .verified-domain-icon .verified-domain-icon-foreground {
+                position: absolute;
+                z-index: 1;
+                display: inline-block;
+                -webkit-font-smoothing: antialiased;
+                font-family: AzureDevOpsMDL2Assets;
+                font-style: normal;
+                line-height: 15px;
+            }
+
+            .verified-domain-icon-foreground:before {
+                content: "\F6AD";
+            }
+
+            .verified-domain-icon-background:before {
+                content: "\F7BD";
+            }
+
+            .verified-domain-url-ssr {
+                font-size: 16px;
+                margin-left: 25px;
+                line-height: 13px;
+            }
+
+            .ux-section-banner .item-header-content.light a.verified-domain-url-ssr {
+                color: rgb(0, 102, 180);
+             }
+
+            .ux-section-banner .item-header-content.dark a.verified-domain-url-ssr {
+                color: rgb(255, 255, 255);
+                text-decoration: underline;
+            }
+
+        
+        /* Verified Domain style end */
+
+        /* top pub. style begin */
+        
+
+        /* top pub. style end */
+
+        /*rating review style begin*/
+        .item-details-control-root .ux-item-review-rating .ux-item-rating-control .rating-control .star {
+            min-width: 16px;
+            min-height: 16px;
+            height: 12px;
+            width: 12px;
+            padding-top: 0px;
+            margin: 0px 2px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper .ux-item-review-rating-wrapper {
+            text-decoration: none;
+            color: inherit;
+            padding-top: 1px;
+            padding-bottom: 3px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper .ux-item-review-rating-wrapper .ux-item-review-rating{
+            display: inline-flex;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper .ux-item-review-rating-wrapper .ux-item-review-rating .ux-item-rating-control {
+            margin-left: 10px;
+            top: 2px;
+            position: relative;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper .ux-item-review-rating-wrapper .ux-item-review-rating .ux-item-rating-count {
+            margin-left: 5px;
+            font-size: 16px;
+            margin-top: -1px;
+            margin-right: 8px;
+        }
+
+        /*rating review style end*/
+        /*Spinner*/
+        .loader-container {
+            text-align: -webkit-center;
+            text-align: -mozkit-center;
+        }
+
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: solid #808080;
+            width: 30px;
+            height: 30px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 310px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 0px 0;
+            position: absolute;
+            z-index: 1;
+            top: 1px;
+            right: 100%;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .uxservices-header #signIn .tooltip a:focus-within .tooltiptext, .uxservices-header .signIn .tooltip a:focus-within .tooltiptext {
+            visibility: visible;
+        }
+
+        .uxservices-header .tooltip .tooltiptext #copy_button:focus #outInfo {
+            padding: 5px 10px;
+            border: 1px solid #fff !important;
+        }
+
+        .ms-Button-icon.bowtie-icon.bowtie-copy-to-clipboard.icon-64:before{
+            content: "\E8C8";
+            font-family: AzureDevOpsMDL2Assets;
+        }
+
+        </style>
+
+        
+               <script type="text/javascript" src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+        
+
+        <script type="text/javascript"  nonce="W1VCKh1hl+I3Do4yp73JnQ==">
+            function sue(em, s, l, c, eo){var w=window,p="ue";w[p]=w[p]||[];w[p].push({"em":em,"s":s,"l":l,"c":c,"eo":eo});return false;}
+            window.onerror = sue;
+            
+        isServerSideRendering = function () {
+            try {
+                return !(document !== undefined);
+            }
+            catch (e) {
+                return true;
+            }
+         };
+
+        redirectToNonSSR = function(area) {
+            var fqn = document.getElementById("FQN").value;
+            var galleryUrl = document.getElementById("galleryUrl").value;
+            window.location.assign(window.location.origin + galleryUrl +"items?itemName=" + fqn + "&ssr=false" + area);
+        }
+        
+        hideAndShowTabs = function(tabToShow) {
+            var currentTab = document.getElementsByClassName("selected-tab");
+            currentTab[0].style.display = "none";
+            currentTab[0].classList.remove("selected-tab");
+
+            var selectedTab =  document.getElementById(tabToShow);
+            selectedTab.classList.add("selected-tab");
+            selectedTab.style.display = "block";
+
+            // Changing the button styling for the newly clicked button 
+            var currentTabButton = document.getElementsByClassName("selected");
+            currentTabButton[0].classList.remove("selected");
+
+            var selectedTabButton =  document.getElementById(tabToShow.slice(0, -3));
+            selectedTabButton.classList.add("selected");
+        }
+
+            if (!isServerSideRendering()) {
+                document.addEventListener('DOMContentLoaded', function () {
+                
+                    document.getElementById("overview").addEventListener("click", function (e) {
+                        hideAndShowTabs("overviewTab");
+                    });
+                    
+                    document.getElementById("qna").addEventListener("click", function (e) {
+                        redirectToNonSSR("#qna");
+                    });
+                    
+                    document.getElementById("versionHistory").addEventListener("click", function (e) {
+                        hideAndShowTabs("versionHistoryTab");
+                    });
+                    
+                    document.getElementById("rnr").addEventListener("click", function (e) {
+                        redirectToNonSSR("#review-details");
+                    });
+                    document.getElementById("review-details").addEventListener("click", function (e) {
+                        redirectToNonSSR("#review-details");
+                    });
+                    
+
+                    // add handler for search
+                    document.getElementById("Fragment_SearchBox").addEventListener("submit", function (e) {
+                        e.preventDefault();
+                        var queryText = document.getElementById("header-search-textbox").value;
+                        var galleryUrl = document.getElementById("galleryUrl").value;
+                        var searchTarget = document.getElementById("searchTarget").value;
+                        window.location = window.location.origin + galleryUrl + "search?term=" + queryText + "&target=" + searchTarget;
+                    });
+                    let acqBtn = document.getElementsByClassName("install-button-container");
+                    if (acqBtn && acqBtn[0]) {
+                        acqBtn[0].onclick = function (event) { var w = window, p = "ciEvents"; w[p] = w[p] || []; w[p].push({ "acquisition": true, "event": event }); };
+                    }
+
+                
+
+                });
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                if (document.getElementById("mgtConsentCookie") != null) {
+                    document.getElementById("mgtConsentCookie").addEventListener("click", function (e) {
+                        console.log("from aspx hit.");
+                        manageConsent();
+                    });
+                }                
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                var h1targetDiv = document.getElementById("overviewTab").getElementsByTagName("h1");
+                for (var i = 0; i < h1targetDiv.length; i++) {
+                    h1targetDiv[i].setAttribute('role', 'heading');
+                    h1targetDiv[i].setAttribute('aria-level', '2');
+                }
+            });
+        </script>
+    <title>
+        Python - Visual Studio Marketplace
+    </title>
+</head>
+<a href="#start-of-content" class="skip-main">Skip to content</a>
+<body class="platform gallery gallery-page-item-details">
+    <div id="cookie-banner"></div>    
+
+
+    <div class="uxservices-header" role="banner">
+        <div class="upperBandContent">
+            <a href="/" title="|   Marketplace" class="left" >
+                <img class="vs-logo-header" aria-label="Visual Studio logo" src="https://cdn.vsassets.io/v/M256_20250507.17/_content/Header/vs-logo.png"/>
+                <div id="marketPlaceLogoLink" class="marketPlaceLogoLink marketplacetext-header" aria-label="Marketplace logo">|   Marketplace</div>
+            </a>
+            <div class="right" style="float: right;">
+                
+                    <div class="signIn">
+                        
+                            <a href="https://app.vssps.visualstudio.com/_signin?realm=marketplace.visualstudio.com&amp;reply_to=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dms-python.python&amp;redirect=1&amp;context=eyJodCI6MywiaGlkIjoiMjY2M2IxM2YtNTBlMy1hNjU1LWExNTktMjJmNmY0NzI1ZmFiIiwicXMiOnt9LCJyciI6IiIsInZoIjoiIiwiY3YiOiIiLCJjcyI6IiJ90&amp;workflowId=marketplace&amp;wt.mc_id=o~msft~marketplace~signIn#ctx=eyJTaWduSW5Db29raWVEb21haW5zIjpbImh0dHBzOi8vbG9naW4ud2luZG93cy5uZXQiLCJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20iXX01" class="scarabLink" style="margin-left:23px;padding-top:1px;color:#fff;font-weight:400;">
+                                Sign in
+                            </a>
+                        
+                    </div>
+                
+                <form id="Fragment_SearchBox" class="header-search" aria-label="search" role="search" data-fragmentname="SearchBox">
+                    <input id="header-search-textbox" class="header-search-textbox" aria-label="search" max-length="200" type="text" autocomplete="off">
+                    <button id="header-search-button" class="header-search-button" aria-label="search" type="submit"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="skiptarget" id="start-of-content"></div>
+    <div id="react_0HNCQDO8NJ4FH"><div data-reactroot=""><div class="item-details-control-root"><div class="breadcrumb"><div class="gallery-centered-content"><span class="bread-crumb-container"><a class="member" href="/vscode">Visual Studio Code</a><span class="separator">&gt;</span><a class="member" href="/search?sortBy=Installs&amp;category=Programming%20Languages&amp;target=VSCode">Programming Languages</a><span class="separator">&gt;</span><span class="member">Python</span></span><span class="vsCodeDownloadLinkContainer"><span>New to Visual Studio Code?</span> <a class="vsCodeDownloadLink" href="https://go.microsoft.com/fwlink?linkid=846418&amp;pub=ms-python&amp;ext=python&amp;utm_source=vsmp&amp;utm_campaign=mpdetails" target="_blank" rel="noreferrer noopener nofollow" aria-label="Get Visual Studio Code Now">Get it now.</a></span></div></div><div class="main-content item-details-main-content" id="vss_1"><div class="item-details-control-root"><div class="ux-item-details"><div class="ux-section-banner" id="section-banner" style="background-color:#1e415e"><div class="ux-section-core gallery-centered-content"><table role="presentation"><tbody><tr><td class="item-img" id="vss_2"><img class="image-display" alt="Python" src="https://ms-python.gallerycdn.vsassets.io/extensions/ms-python/python/2025.7.2025052301/1747996986120/Microsoft.VisualStudio.Services.Icons.Default" style="top:0.5px;visibility:visible"/></td><td class="item-header"><div class="item-header-content dark"><h1><span class="ux-item-name">Python</span></h1><div class="ux-item-second-row-wrapper"><div class="ux-item-publisher"><h2 role="presentation"><a class="ux-item-publisher-link item-banner-focussable-child-item" href="publishers/Microsoft" aria-label="More from Microsoft publisher" style="color:#ffffff">Microsoft</a></h2></div><div class="ux-marketplace-verified-doamin-icon"><div class="verified-domain-icon"><i class="verified-domain-icon-background" role="presentation"></i><i class="verified-domain-icon-foreground" role="presentation" title="Microsoft has a verified ownership for the domain microsoft.com"></i><a href="https://microsoft.com" class="verified-domain-url-ssr">microsoft.com</a></div></div><span class="divider"> | </span><div class="ux-item-rating"><div class="bowtie-icon bowtie-install"></div><span class="installs-text" title="The number of unique installations, not including updates."> 170,472,037 installs</span></div><a id="review-details" href="#review-details" class="ux-item-review-rating-wrapper" aria-label="Average rating: 4.2 out of 5. Navigate to user reviews."><span class="ux-item-review-rating" title="Average rating: 4.2 out of 5"><span class="divider"> | </span><span class="ux-item-rating-control"><span class="rating-control" aria-hidden="true"><img class="star full-star" alt="" aria-label="1 star" src="https://cdn.vsassets.io/v/M256_20250507.17/_content/FullStarLight.svg"/><img class="star full-star" alt="" aria-label="2 star" src="https://cdn.vsassets.io/v/M256_20250507.17/_content/FullStarLight.svg"/><img class="star full-star" alt="" aria-label="3 star" src="https://cdn.vsassets.io/v/M256_20250507.17/_content/FullStarLight.svg"/><img class="star full-star" alt="" aria-label="4 star" src="https://cdn.vsassets.io/v/M256_20250507.17/_content/FullStarLight.svg"/><img class="star empty-star" alt="" src="https://cdn.vsassets.io/v/M256_20250507.17/_content/EmptyStar.svg"/></span></span><span class="ux-item-rating-count"> (<span>616</span>)</span></span></a><span class="divider"> | </span><span class="item-price-category">Free</span></div><div class="ux-item-shortdesc">Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.</div><div class="ux-item-action"><div><div class="vscode-install-title">Installation</div><div id="vscode-install-instructions" class="vscode-install-instructions">Launch VS Code Quick Open (<code>Ctrl+P</code>), paste the following command, and press enter.</div><div class="vscode-install-info-container"><div class="vscode-command-container"><input type="text" class="vscode-command-input" id="vscode-command-input" readonly="" aria-labelledby="vscode-install-instructions" value="ext install ms-python.python" size="29"/><button class="copy-to-clipboard-button" id="copy-to-clipboard-button" title="Copy to clipboard">Copy</button></div><div class="copied-display-container"><div class="copied-display-div" id="copied-animation">Copied to clipboard</div></div><a target="_blank" class="vscode-moreinformation dark" href="http://go.microsoft.com/fwlink/?LinkID=691811&amp;pub=ms-python&amp;ext=python">More Info</a></div></div><div style="display:none"><input type="text" id="FQN" readonly="" value="ms-python.python"/><input type="text" id="galleryUrl" readonly="" value="/"/><input type="text" id="searchTarget" readonly="" value="VSCode"/></div></div></div></td></tr></tbody></table></div></div><div class="gallery-centered-content"><div class="ux-section-details"><div class="ms-Fabric ux-section-details-tabs"><div class="gallery-centered-content"><div class="tab"><button id="overview" class="selected">Overview</button><button id="versionHistory">Version History</button><button id="qna">Q &amp; A</button><button id="rnr">Rating &amp; Review</button></div><div class="tabcontent"><div id="overviewTab" class="overview selected-tab"><div class="details-tab itemdetails"><table class="ux-section-details-table" role="presentation"><tbody><tr><td class="ux-itemdetails-left"><div class="itemDetails"><div class="markdown"><h1 id=python-extension-for-visual-studio-code>Python extension for Visual Studio Code</h1>
+<p>A <a href="https://code.visualstudio.com/" target=_blank rel="noreferrer noopener nofollow">Visual Studio Code</a> <a href="https://marketplace.visualstudio.com/VSCode" target=_blank rel="noreferrer noopener nofollow">extension</a> with rich support for the <a href="https://www.python.org/" target=_blank rel="noreferrer noopener nofollow">Python language</a> (for all <a href="https://devguide.python.org/versions/#supported-versions" target=_blank rel="noreferrer noopener nofollow">actively supported Python versions</a>), providing access points for extensions to seamlessly integrate and offer support for IntelliSense (Pylance), debugging (Python Debugger), formatting, linting, code navigation, refactoring, variable explorer, test explorer, and more!</p>
+<h2 id=support-for-vscode.dev>Support for <a href="https://vscode.dev/" target=_blank rel="noreferrer noopener nofollow">vscode.dev</a></h2>
+<p>The Python extension does offer <a href="https://github.com/microsoft/vscode-python/wiki/Partial-mode" target=_blank rel="noreferrer noopener nofollow">some support</a> when running on <a href="https://vscode.dev/" target=_blank rel="noreferrer noopener nofollow">vscode.dev</a> (which includes <a href="http://github.dev/" target=_blank rel="noreferrer noopener nofollow">github.dev</a>). This includes partial IntelliSense for open files in the editor.</p>
+<h2 id=installed-extensions>Installed extensions</h2>
+<p>The Python extension will automatically install the following extensions by default to provide the best Python development experience in VS Code:</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance" target=_blank rel="noreferrer noopener nofollow">Pylance</a> - to provide performant Python language support</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy" target=_blank rel="noreferrer noopener nofollow">Python Debugger</a> - to provide a seamless debug experience with debugpy</li>
+</ul>
+<p>These extensions are optional dependencies, meaning the Python extension will remain fully functional if they fail to be installed. Any or all of these extensions can be <a href="https://code.visualstudio.com/docs/editor/extension-marketplace#_disable-an-extension" target=_blank rel="noreferrer noopener nofollow">disabled</a> or <a href="https://code.visualstudio.com/docs/editor/extension-marketplace#_uninstall-an-extension" target=_blank rel="noreferrer noopener nofollow">uninstalled</a> at the expense of some features. Extensions installed through the marketplace are subject to the <a href="https://cdn.vsassets.io/v/M146_20190123.39/_content/Microsoft-Visual-Studio-Marketplace-Terms-of-Use.pdf" target=_blank rel="noreferrer noopener nofollow">Marketplace Terms of Use</a>.</p>
+<h2 id=extensibility>Extensibility</h2>
+<p>The Python extension provides pluggable access points for extensions that extend various feature areas to further improve your Python development experience. These extensions are all optional and depend on your project configuration and preferences.</p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/python/formatting#_choose-a-formatter" target=_blank rel="noreferrer noopener nofollow">Python formatters</a></li>
+<li><a href="https://code.visualstudio.com/docs/python/linting#_choose-a-linter" target=_blank rel="noreferrer noopener nofollow">Python linters</a></li>
+</ul>
+<p>If you encounter issues with any of the listed extensions, please file an issue in its corresponding repo.</p>
+<h2 id=quick-start>Quick start</h2>
+<ul>
+<li><strong>Step 1.</strong> <a href="https://code.visualstudio.com/docs/python/python-tutorial#_prerequisites" target=_blank rel="noreferrer noopener nofollow">Install a supported version of Python on your system</a> (note: that the system install of Python on macOS is not supported).</li>
+<li><strong>Step 2.</strong> <a href="https://code.visualstudio.com/docs/editor/extension-gallery" target=_blank rel="noreferrer noopener nofollow">Install the Python extension for Visual Studio Code</a>.</li>
+<li><strong>Step 3.</strong> Open or create a Python file and start coding!</li>
+</ul>
+<h2 id=set-up-your-environment>Set up your environment</h2>
+
+<ul>
+<li><p>Select your Python interpreter by clicking on the status bar</p>
+ <img src="https://raw.githubusercontent.com/microsoft/vscode-python/main/images/InterpreterSelectionZoom.gif" width=280 height=100>
+</li>
+<li><p>Configure the debugger through the Debug Activity Bar</p>
+ <img src="https://raw.githubusercontent.com/microsoft/vscode-python/main/images/ConfigureDebugger.gif" width=734 height=413>
+</li>
+<li><p>Configure tests by running the <code>Configure Tests</code> command</p>
+ <img src="https://raw.githubusercontent.com/microsoft/vscode-python/main/images/ConfigureTests.gif" width=734 height=413>
+</li>
+</ul>
+<h2 id=jupyter-notebook-quick-start>Jupyter Notebook quick start</h2>
+<p>The Python extension offers support for Jupyter notebooks via the <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter" target=_blank rel="noreferrer noopener nofollow">Jupyter extension</a> to provide you a great Python notebook experience in VS Code.</p>
+<ul>
+<li><p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter" target=_blank rel="noreferrer noopener nofollow">Jupyter extension</a>.</p>
+</li>
+<li><p>Open or create a Jupyter Notebook file (.ipynb) and start coding in our Notebook Editor!</p>
+ <img src="https://raw.githubusercontent.com/microsoft/vscode-python/main/images/OpenOrCreateNotebook.gif" width=1029 height=602>
+</li>
+</ul>
+<p>For more information you can:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/python/python-tutorial#_prerequisites" target=_blank rel="noreferrer noopener nofollow">Follow our Python tutorial</a> with step-by-step instructions for building a simple app.</li>
+<li>Check out the <a href="https://code.visualstudio.com/docs/languages/python" target=_blank rel="noreferrer noopener nofollow">Python documentation on the VS Code site</a> for general information about using the extension.</li>
+<li>Check out the <a href="https://code.visualstudio.com/docs/python/jupyter-support" target=_blank rel="noreferrer noopener nofollow">Jupyter Notebook documentation on the VS Code site</a> for information about using Jupyter Notebooks in VS Code.</li>
+</ul>
+<h2 id=useful-commands>Useful commands</h2>
+<p>Open the Command Palette (Command+Shift+P on macOS and Ctrl+Shift+P on Windows/Linux) and type in one of the following commands:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Python: Select Interpreter</code></td>
+<td>Switch between Python interpreters, versions, and environments.</td>
+</tr>
+<tr>
+<td><code>Python: Start Terminal REPL</code></td>
+<td>Start an interactive Python REPL using the selected interpreter in the VS Code terminal.</td>
+</tr>
+<tr>
+<td><code>Python: Run Python File in Terminal</code></td>
+<td>Runs the active Python file in the VS Code terminal. You can also run a Python file by right-clicking on the file and selecting <code>Run Python File in Terminal</code>.</td>
+</tr>
+<tr>
+<td><code>Python: Configure Tests</code></td>
+<td>Select a test framework and configure it to display the Test Explorer.</td>
+</tr>
+</tbody>
+</table>
+<p>To see all available Python commands, open the Command Palette and type <code>Python</code>. For Jupyter extension commands, just type <code>Jupyter</code>.</p>
+<h2 id=feature-details>Feature details</h2>
+<p>Learn more about the rich features of the Python extension:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/python/editing#_autocomplete-and-intellisense" target=_blank rel="noreferrer noopener nofollow">IntelliSense</a>: Edit your code with auto-completion, code navigation, syntax checking and more</li>
+<li><a href="https://code.visualstudio.com/docs/python/linting" target=_blank rel="noreferrer noopener nofollow">Linting</a>: Get additional code analysis with Pylint, Flake8 and more</li>
+<li><a href="https://code.visualstudio.com/docs/python/formatting" target=_blank rel="noreferrer noopener nofollow">Code formatting</a>: Format your code with black, autopep or yapf</li>
+<li><a href="https://code.visualstudio.com/docs/python/debugging" target=_blank rel="noreferrer noopener nofollow">Debugging</a>: Debug your Python scripts, web apps, remote or multi-threaded processes</li>
+<li><a href="https://code.visualstudio.com/docs/python/unit-testing" target=_blank rel="noreferrer noopener nofollow">Testing</a>: Run and debug tests through the Test Explorer with unittest or pytest.</li>
+<li><a href="https://code.visualstudio.com/docs/python/jupyter-support" target=_blank rel="noreferrer noopener nofollow">Jupyter Notebooks</a>: Create and edit Jupyter Notebooks, add and run code cells, render plots, visualize variables through the variable explorer, visualize dataframes with the data viewer, and more</li>
+<li><a href="https://code.visualstudio.com/docs/python/environments" target=_blank rel="noreferrer noopener nofollow">Environments</a>: Automatically activate and switch between virtualenv, venv, pipenv, conda and pyenv environments</li>
+<li><a href="https://code.visualstudio.com/docs/python/editing#_refactoring" target=_blank rel="noreferrer noopener nofollow">Refactoring</a>: Restructure your Python code with variable extraction and method extraction. Additionally, there is componentized support to enable additional refactoring, such as import sorting, through extensions including <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.isort" target=_blank rel="noreferrer noopener nofollow">isort</a> and <a href="https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff" target=_blank rel="noreferrer noopener nofollow">Ruff</a>.</li>
+</ul>
+<h2 id=supported-locales>Supported locales</h2>
+<p>The extension is available in multiple languages: <code>de</code>, <code>en</code>, <code>es</code>, <code>fa</code>, <code>fr</code>, <code>it</code>, <code>ja</code>, <code>ko-kr</code>, <code>nl</code>, <code>pl</code>, <code>pt-br</code>, <code>ru</code>, <code>tr</code>, <code>zh-cn</code>, <code>zh-tw</code></p>
+<h2 id=questions-issues-feature-requests-and-contributions>Questions, issues, feature requests, and contributions</h2>
+<ul>
+<li>If you have a question about how to accomplish something with the extension, please <a href="https://github.com/microsoft/vscode-python/discussions/categories/q-a" target=_blank rel="noreferrer noopener nofollow">ask on our Discussions page</a>.</li>
+<li>If you come across a problem with the extension, please <a href="https://github.com/microsoft/vscode-python" target=_blank rel="noreferrer noopener nofollow">file an issue</a>.</li>
+<li>Contributions are always welcome! Please see our <a href="https://github.com/Microsoft/vscode-python/blob/main/CONTRIBUTING.md" target=_blank rel="noreferrer noopener nofollow">contributing guide</a> for more details.</li>
+<li>Any and all feedback is appreciated and welcome!
+<ul>
+<li>If someone has already <a href="https://github.com/Microsoft/vscode-python" target=_blank rel="noreferrer noopener nofollow">filed an issue</a> that encompasses your feedback, please leave a &#128077;/&#128078; reaction on the issue.</li>
+<li>Otherwise please start a <a href="https://github.com/microsoft/vscode-python/discussions/categories/ideas" target=_blank rel="noreferrer noopener nofollow">new discussion</a>.</li>
+</ul>
+</li>
+<li>If you're interested in the development of the extension, you can read about our <a href="https://github.com/Microsoft/vscode-python/blob/main/CONTRIBUTING.md#development-process" target=_blank rel="noreferrer noopener nofollow">development process</a>.</li>
+</ul>
+<h2 id=data-and-telemetry>Data and telemetry</h2>
+<p>The Microsoft Python Extension for Visual Studio Code collects usage
+data and sends it to Microsoft to help improve our products and
+services. Read our
+<a href="https://privacy.microsoft.com/privacystatement" target=_blank rel="noreferrer noopener nofollow">privacy statement</a> to
+learn more. This extension respects the <code>telemetry.enableTelemetry</code>
+setting which you can learn more about at
+<a href="https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting" target=_blank rel="noreferrer noopener nofollow">https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting</a>.</p>
+</div></div></td><td class="ux-itemdetails-right" role="complementary"><div class="screenshot-carousel-container"></div><div class="loader-container"><div class="loader"></div></div><div class="itemDetails-right"></div></td></tr></tbody></table></div></div><div id="versionHistoryTab" style="display:none"><div class="versionHistoryTab-loader-container"><div class="loader"></div></div><div id="version-history-tab-content"></div></div></div></div></div></div></div></div></div></div><div id="gallery-footer"><footer><div id="ux-footer" class="ltr" role="contentinfo"><div id="baseFooter"><div id="Fragment_BaseFooterLinks"><div class="linkList"><ul class="links horizontal"><li><a href="https://www.visualstudio.com/support/support-overview-vs" data-mscc-ic="false">Contact us</a></li><li><a href="https://careers.microsoft.com/" data-mscc-ic="false">Jobs</a></li><li><a href="https://go.microsoft.com/fwlink/?LinkID=521839" data-mscc-ic="false">Privacy</a></li><li><a id="mgtConsentCookie" data-mscc-ic="false">Manage cookies</a></li><li><a href="https://aka.ms/vsmarketplace-ToU" data-mscc-ic="false">Terms of use</a></li><li><a href="https://www.microsoft.com/trademarks" data-mscc-ic="false">Trademarks</a></li></ul></div></div><div id="rightBaseFooter">©<!-- --> 2025 Microsoft<span class="microsoftLogo" title="Microsoft"></span></div><div class="clear"></div></div></div></footer></div></div></div></div>
+    
+    <div class="render-time">
+        <script class="server-side-render" defer="defer" type="application/json">2</script>
+    </div>
+    <div class="rhs-content">
+        <script class="jiContent" defer="defer" type="application/json">{"GitHubLink":"https://github.com/Microsoft/vscode-python.git","ReleaseDateString":"Tue, 19 Jan 2016 15:03:11 GMT","LastUpdatedDateString":"Fri, 23 May 2025 10:48:58 GMT","GalleryUrl":"/","Categories":["Programming Languages","Debuggers","Data Science","Machine Learning"],"Tags":["__ext_j2","__ext_jinja2","__web_extension","debuggers","django","ini","jinja","json","keybindings","language-model-tools","linters","multi-root ready","pip requirements","pip-requirements","python","requirements.txt","toml","tools","unittest","yaml"],"ExtensionProperties":{"Microsoft.VisualStudio.Services.Branding.Color":"#1e415e","Microsoft.VisualStudio.Services.Branding.Theme":"dark","Microsoft.VisualStudio.Services.Links.Getstarted":"https://github.com/Microsoft/vscode-python.git","Microsoft.VisualStudio.Services.Links.Support":"https://github.com/Microsoft/vscode-python/issues","Microsoft.VisualStudio.Services.Links.Learn":"https://github.com/Microsoft/vscode-python","Microsoft.VisualStudio.Services.Links.Source":"https://github.com/Microsoft/vscode-python.git","Microsoft.VisualStudio.Services.Links.GitHub":"https://github.com/Microsoft/vscode-python.git","Microsoft.VisualStudio.Code.Engine":"^1.95.0","Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown":"true","Microsoft.VisualStudio.Code.ExtensionDependencies":"","Microsoft.VisualStudio.Services.CustomerQnALink":"https://github.com/microsoft/vscode-python/discussions/categories/q-a","Microsoft.VisualStudio.Code.ExtensionPack":"ms-python.vscode-pylance,ms-python.debugpy","Microsoft.VisualStudio.Code.LocalizedLanguages":"","Microsoft.VisualStudio.Code.ExtensionKind":"workspace,web","Microsoft.VisualStudio.Code.PreRelease":"true","Microsoft.VisualStudio.Services.Content.Pricing":"Free","Microsoft.VisualStudio.Code.EnabledApiProposals":"contribEditorContentMenu,quickPickSortByLabel,testObserver,quickPickItemTooltip,terminalDataWriteEvent,terminalExecuteCommandEvent,codeActionAI,notebookReplDocument,notebookVariableProvider","Microsoft.VisualStudio.Code.ExecutesCode":"true"},"Resources":{"LicenseText":"License","ChangelogText":"Changelog","PublisherName":"ms-python","ExtensionName":"python","Version":"2025.7.2025052301"},"MoreInfo":{"VersionValue":"2025.7.2025052301","PublisherValue":"Microsoft","UniqueIdentifierValue":"ms-python.python","TwitterShareContents":"Just%20discovered%20this%20on%20the%20%23VSMarketplace%3A%20https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dms-python.python","EmailShareContents":"Hi%2C%20Just%20discovered%20this%20extension%20on%20the%20%23VSMarketplace%20that%20may%20be%20of%20interest%20to%20you.%20Check%20it%20out%20%40%20https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dms-python.python%20%21","EmailShareSubject":"Check%20out%20-%20Python%20for%20Visual%20Studio%20Code","IsPublic":true},"ResourcesPath":"https://cdn.vsassets.io/v/M256_20250507.17/_content/","AssetUri":"https://ms-python.gallerycdn.vsassets.io/extensions/ms-python/python/2025.7.2025052301/1747996986120","VsixManifestAssetType":"Microsoft.VisualStudio.Services.VsixManifest","StaticResourceVersion":"M256_20250507.17","AfdIdentifier":"Ref A: 813C369C7C3D4B67BE0FB714087D3B46 Ref B: SIN30EDGE0517 Ref C: 2025-05-26T09:59:46Z","VsixId":null,"WorksWith":["Windows ARM, Linux x64, macOS Intel, Windows x64, macOS Apple Silicon, Alpine Linux 64 bit, Web, Linux ARM64, Alpine Linux ARM64, Linux ARM32"],"ItemType":3,"IsMDPruned":false,"PrunedMDLength":0,"OverviewMDLength":9714,"IsRHSAsyncComponentsEnabled":true,"OfferDetails":null,"IsDetailsTabsEnabled":false,"ShowVersionHistory":true,"IsSeeMoreButtonOnVersionHistoryTab":false,"DisableVSCodeDownloadButtonEnabled":true,"IsReferralLinkRedirectionWarningPopupEnabled":true,"Versions":[{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:48:58 GMT","targetPlatform":"win32-arm64"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:48:54 GMT","targetPlatform":"linux-x64"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:48:33 GMT","targetPlatform":"darwin-x64"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:48:15 GMT","targetPlatform":"win32-x64"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:47:08 GMT","targetPlatform":"darwin-arm64"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:46:54 GMT","targetPlatform":"alpine-x64"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:46:29 GMT","targetPlatform":"web"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:46:03 GMT","targetPlatform":"linux-arm64"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:45:58 GMT","targetPlatform":"alpine-arm64"},{"version":"2025.7.2025052301","lastUpdated":"Fri, 23 May 2025 10:45:41 GMT","targetPlatform":"linux-armhf"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 11:09:00 GMT","targetPlatform":"linux-x64"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:49:02 GMT","targetPlatform":"win32-arm64"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:49:01 GMT","targetPlatform":"darwin-x64"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:49:00 GMT","targetPlatform":"linux-armhf"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:48:31 GMT","targetPlatform":"linux-arm64"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:48:07 GMT","targetPlatform":"darwin-arm64"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:47:58 GMT","targetPlatform":"win32-x64"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:47:53 GMT","targetPlatform":"alpine-arm64"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:47:49 GMT","targetPlatform":"web"},{"version":"2025.7.2025052102","lastUpdated":"Wed, 21 May 2025 10:47:27 GMT","targetPlatform":"alpine-x64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:39:50 GMT","targetPlatform":"darwin-x64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:37:45 GMT","targetPlatform":"darwin-arm64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:37:17 GMT","targetPlatform":"linux-x64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:36:51 GMT","targetPlatform":"win32-x64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:36:32 GMT","targetPlatform":"web"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:36:10 GMT","targetPlatform":"alpine-arm64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:35:16 GMT","targetPlatform":"alpine-x64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:35:14 GMT","targetPlatform":"win32-arm64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:34:58 GMT","targetPlatform":"linux-arm64"},{"version":"2025.7.2025052101","lastUpdated":"Wed, 21 May 2025 04:33:57 GMT","targetPlatform":"linux-armhf"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:31:15 GMT","targetPlatform":"win32-x64"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:29:55 GMT","targetPlatform":"win32-arm64"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:29:35 GMT","targetPlatform":"darwin-x64"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:29:24 GMT","targetPlatform":"darwin-arm64"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:29:15 GMT","targetPlatform":"linux-armhf"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:29:10 GMT","targetPlatform":"web"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:29:01 GMT","targetPlatform":"alpine-arm64"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:28:48 GMT","targetPlatform":"linux-x64"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:28:15 GMT","targetPlatform":"linux-arm64"},{"version":"2025.7.2025052004","lastUpdated":"Tue, 20 May 2025 22:27:22 GMT","targetPlatform":"alpine-x64"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:50:22 GMT","targetPlatform":"linux-x64"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:49:42 GMT","targetPlatform":"alpine-x64"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:49:38 GMT","targetPlatform":"darwin-x64"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:49:13 GMT","targetPlatform":"linux-armhf"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:49:03 GMT","targetPlatform":"win32-arm64"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:48:38 GMT","targetPlatform":"win32-x64"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:48:15 GMT","targetPlatform":"darwin-arm64"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:47:35 GMT","targetPlatform":"alpine-arm64"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:46:38 GMT","targetPlatform":"web"},{"version":"2025.7.2025052003","lastUpdated":"Tue, 20 May 2025 10:46:22 GMT","targetPlatform":"linux-arm64"}],"IsCSRFeatureEnabled":false,"TargetPlatforms":{"win32-x64":"Windows x64","win32-arm64":"Windows ARM","linux-x64":"Linux x64","linux-arm64":"Linux ARM64","linux-armhf":"Linux ARM32","darwin-x64":"macOS Intel","darwin-arm64":"macOS Apple Silicon","alpine-x64":"Alpine Linux 64 bit","web":"Web","alpine-arm64":"Alpine Linux ARM64","win32-ia32":"Windows ia32"}}</script>
+    </div>
+    <div class="csp-user">
+        <script class="is-csp-user" defer="defer" type="application/json">false</script>
+    </div>
+    
+
+    <script type="text/javascript"  nonce="W1VCKh1hl+I3Do4yp73JnQ==">
+        if (document) {
+            try {
+                if (window.performance && window.performance.timing) {
+                    window["marketplaceRenderTime"] = Date.now() - window.performance.timing.navigationStart;
+                }
+            }
+            catch(e){ }
+        }
+    </script>
+    <script type="text/javascript" nonce="W1VCKh1hl+I3Do4yp73JnQ=="> var __vssPageContext = {"webContext":{"user":{"id":"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa","name":"Anonymous","email":"","uniqueName":"TEAM FOUNDATION\\Anonymous"},"host":{"id":"2663b13f-50e3-a655-a159-22f6f4725fab","name":"TEAM FOUNDATION","uri":"https://marketplace.visualstudio.com/","relativeUri":"/","hostType":"deployment","scheme":"https","authority":"marketplace.visualstudio.com"}},"moduleLoaderConfig":{"baseUrl":"https://cdn.vsassets.io/v/M256_20250507.17/_scripts/TFS/min/","paths":{"Charts/Resources":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","VSSPreview/Resources":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","ContentRendering/Resources":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","VSS/Resources":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","Engagement/Resources":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","Gallery/Scripts/Gallery/Resources":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","highcharts":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts.v11.4.6","highcharts/highcharts-more":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-more.v11.4.6","highcharts/modules/accessibility":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-accessibility.v11.4.6","highcharts/modules/funnel":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-funnel.v11.4.6","highcharts/modules/heatmap":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-heatmap.v11.4.6"},"map":{"*":{"office-ui-fabric-react/lib":"OfficeFabric"}},"contributionPaths":{"VSS":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/VSS","pathType":"default"},"VSS/Resources":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","pathType":"resource"},"q":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/q","pathType":"default"},"knockout":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/knockout","pathType":"default"},"mousetrap":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/mousetrap","pathType":"default"},"mustache":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/mustache","pathType":"default"},"react":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/react.15.3","pathType":"default"},"react-dom":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/react-dom.15.3","pathType":"default"},"react-transition-group":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/react-transition-group.15.3","pathType":"default"},"jQueryUI":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/jQueryUI","pathType":"default"},"jquery":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/jquery","pathType":"default"},"OfficeFabric":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/OfficeFabric","pathType":"default"},"tslib":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/tslib","pathType":"default"},"@uifabric":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/@uifabric","pathType":"default"},"VSSUI":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/VSSUI","pathType":"default"},"Charts":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/Charts","pathType":"default"},"Charts/Resources":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","pathType":"resource"},"ContentRendering":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/ContentRendering","pathType":"default"},"ContentRendering/Resources":{"value":"/_static/tfs/M256_20250507.17/_scripts/TFS/min/en-US","pathType":"resource"},"highcharts":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts.v11.4.6","pathType":"thirdParty"},"highcharts/highcharts-more":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-more.v11.4.6","pathType":"thirdParty"},"highcharts/modules/accessibility":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-accessibility.v11.4.6","pathType":"thirdParty"},"highcharts/modules/funnel":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-funnel.v11.4.6","pathType":"thirdParty"},"highcharts/modules/heatmap":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-heatmap.v11.4.6","pathType":"thirdParty"}},"shim":{"jquery":{"deps":[],"exports":"jQuery"}},"waitSeconds":30},"coreReferences":{"stylesheets":[{"url":"/_static/tfs/M256_20250507.17/_cssbundles/Default/vss-bundle-ext-core-css-vdl6C9oqaY8jIYGt0fSVzQfhTlc3U3sLKE8T0mcZwW_0=","highContrastUrl":null,"isCoreStylesheet":true}],"scripts":[{"identifier":"JQuery","url":"https://cdn.vsassets.io/3rdParty/_scripts/jquery-3.6.0.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"JQueryXDomain","url":"https://cdn.vsassets.io/3rdParty/_scripts/jquery.xdomainrequest.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"Promise","url":"https://cdn.vsassets.io/v/M256_20250507.17/_scripts/TFS/min/promise.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"GlobalScripts","url":"https://cdn.vsassets.io/v/M256_20250507.17/_scripts/TFS/min/global-scripts.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"LoaderFixes","url":"https://cdn.vsassets.io/v/M256_20250507.17/_scripts/TFS/pre-loader-shim.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":false},{"identifier":"AMDLoader","url":"https://cdn.vsassets.io/3rdParty/_scripts/require.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"LoaderFixes","url":"https://cdn.vsassets.io/v/M256_20250507.17/_scripts/TFS/post-loader-shim.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":false}],"coreScriptsBundle":{"identifier":"CoreBundle","url":"/_public/_Bundling/Content?bundle=vss-bundle-basejs-vx38JYf0FTtFkI9k88H54KYCLs9sIP_6xJwgWGnd-xvw=","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},"extensionCoreReferences":{"identifier":"CoreBundle","url":"/_public/_Bundling/Content?bundle=vss-bundle-ext-core-vgkBQ3QA8NbeIPkQnJyRnAfA7HKovpLjHvM8mIGi3ysw=","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true}},"webAccessConfiguration":{"isHosted":true,"paths":{"rootPath":"/","staticContentRootPath":"/","staticContentVersion":"M256_20250507.17","resourcesPath":"https://cdn.vsassets.io/v/M256_20250507.17/_content/","staticRootTfs":"https://cdn.vsassets.io/v/M256_20250507.17/","cdnFallbackStaticRootTfs":"/_static/tfs/M256_20250507.17/","staticRoot3rdParty":"https://cdn.vsassets.io/3rdParty/"},"api":{"webApiVersion":"1","areaPrefix":"_","controllerPrefix":"_"},"mailSettings":{"enabled":false},"registryItems":{}},"microsoftAjaxConfig":{"cultureInfo":{"name":"en-US","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"$","NaNSymbol":"NaN","CurrencyNegativePattern":0,"NumberNegativePattern":1,"PercentPositivePattern":1,"PercentNegativePattern":1,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"0001-01-01T00:00:00","MaxSupportedDateTime":"9999-12-31T23:59:59.9999999","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2049,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"dddd, MMMM d, yyyy h:mm:ss tt","LongDatePattern":"dddd, MMMM d, yyyy","LongTimePattern":"h:mm:ss tt","MonthDayPattern":"MMMM d","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH':'mm':'ss 'GMT'","ShortDatePattern":"M/d/yyyy","ShortTimePattern":"h:mm tt","SortableDateTimePattern":"yyyy'-'MM'-'dd'T'HH':'mm':'ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy'-'MM'-'dd HH':'mm':'ss'Z'","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]},"numberShortForm":{"QuantitySymbols":["K","M","B"],"NumberGroupSize":1000,"ThousandSymbol":"K"},"eras":null}},"timeZonesConfiguration":{},"featureAvailability":{"featureStates":{"VisualStudio.Services.Contribution.EnableOnPremUnsecureBrowsers":false,"VisualStudio.Service.WebPlatform.ClientErrorReporting":true,"Microsoft.VisualStudio.Services.Gallery.Client.UseCdnAssetUri":false,"VisualStudio.Services.WebAccess.SubresourceIntegrity":false,"VisualStudio.Services.IdentityPicker.ReactProfileCard":true}},"appInsightsConfiguration":{"enabled":false,"instrumentationKey":"00000000-0000-0000-0000-000000000000","insightsScriptUrl":null},"diagnostics":{"sessionId":"fecde247-dc41-40aa-b8b3-906683fa2625","activityId":"fecde247-dc41-40aa-b8b3-906683fa2625","bundlingEnabled":true,"cdnAvailable":true,"cdnEnabled":true,"webPlatformVersion":"M256","serviceVersion":"Dev20.M256.1 (build: AzureDevOps_M256_20250523.6)"},"navigation":{"topMostLevel":"deployment","area":"","currentController":"Gallery","currentAction":"Details","commandName":"Gallery.Details","routeId":"ms.vss-gallery-web.gallery-route-details","routeTemplates":["items"],"routeValues":{"controller":"Gallery","action":"Details"}},"globalization":{"explicitTheme":"","theme":"Default","culture":"en-US","timezoneOffset":0,"timeZoneId":"UTC"},"serviceInstanceId":"00000029-0000-8888-8000-000000000000","hubsContext":{},"serviceLocations":{"locations":{"951917ac-a960-4999-8464-e3f0aa25b381":{"Application":"https://spsprodeus25.vssps.visualstudio.com/","Deployment":"https://spsprodeus25.vssps.visualstudio.com/"}}}};</script> <script defer="true" data-bundlelength="127542" data-bundlename="basejs" nonce="W1VCKh1hl+I3Do4yp73JnQ=="  src="/_public/_Bundling/Content?bundle=vss-bundle-basejs-vx38JYf0FTtFkI9k88H54KYCLs9sIP_6xJwgWGnd-xvw="  type="text/javascript"></script>
+    <script defer="true" data-bundlelength="227729" data-bundlename="common" data-includedscripts="VSS/Bundling" nonce="W1VCKh1hl+I3Do4yp73JnQ=="  src="/_public/_Bundling/Content?bundle=vss-bundle-common-vR-q2ELaL9TRXs_HRU93lfLQCyMYXxV0wk6-KwfjeREY="  type="text/javascript"></script><script defer="true" data-bundlelength="2206028" data-bundlename="view" data-includedscripts="Gallery/Client/Pages/VSSItemDetailsSSR/VSSItemDetailsSSRAsync" nonce="W1VCKh1hl+I3Do4yp73JnQ=="  src="/_public/_Bundling/Content?bundle=vss-bundle-view-vCd1PGQHY6cO3yGkNRGRD-mJEgDGTyOKXZaMIc6j3NNM="  type="text/javascript"></script>
+    <script defer=true  nonce="W1VCKh1hl+I3Do4yp73JnQ==" src="/_static/tfs/M256_20250507.17/_scripts/TFS/min/Gallery/Client/Pages/VSSItemDetailsSSR/SSRModuleWrappers.js"></script>
+    <script  nonce="W1VCKh1hl+I3Do4yp73JnQ==" src="/_static/tfs/M256_20250507.17/_scripts/TFS/min/Gallery/Client/Common/ManageCookieDrop.js"></script>
+</body>
+
+</html>
