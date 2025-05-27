@@ -1,0 +1,7 @@
+# 格式：插件名 版本号(可选)
+# 例如：
+# python
+# python 2025.7.2025052601
+python
+pylance
+jupyter
