@@ -71,7 +71,12 @@ else
     success=0
     while [ $retry_count -lt $max_retry ]; do
         echo -e "\n第 $((retry_count+1)) 次尝试下载vsix文件..."
-        wget --user-agent="Mozilla/5.0" --tries=10 --timeout=30 --waitretry=2 -c -O "$vsix_file" "$download_url"
+        wget --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" \
+             --header="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" \
+             --header="Accept-Language: zh-CN,zh;q=0.9,en;q=0.8" \
+             --header="Connection: keep-alive" \
+             --header="Upgrade-Insecure-Requests: 1" \
+             --tries=10 --timeout=30 --waitretry=2 -c -O "$vsix_file" "$download_url"
         # 检查是否为HTML错误页或下载不完整
         if file "$vsix_file" | grep -qi html || [ $(stat -c%s "$vsix_file") -lt 10240 ]; then
             echo "下载失败，返回的是网页或文件过小，可能不是vsix文件，请检查下载链接和参数"
