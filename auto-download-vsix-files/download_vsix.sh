@@ -96,9 +96,31 @@ if [ -n "$publisher_id" ] && [ -n "$extension_id" ]; then
     vsix_file="${download_dir}/${publisher_id}.${extension_id}-${version}.vsix"
     
     # 下载vsix文件
+    #echo -e "\n正在下载vsix文件..."
+    #if curl -L "$download_url" -o "$vsix_file"; then
+    #    echo "下载成功，文件保存在: $vsix_file"
+    #else
+    #    echo "错误：下载失败"
+    #    exit 7
+    #fi
+
     echo -e "\n正在下载vsix文件..."
     if curl -L "$download_url" -o "$vsix_file"; then
         echo "下载成功，文件保存在: $vsix_file"
+        # 检查文件大小是否超过100MB
+        max_size=$((100*1024*1024))
+        file_size=$(stat -c%s "$vsix_file")
+        if [ "$file_size" -gt "$max_size" ]; then
+            echo "文件大于100MB，正在分卷压缩..."
+            split -b 99m "$vsix_file" "${vsix_file}.part_"
+            echo "分卷完成，生成文件："
+            ls -lh "${vsix_file}.part_"*
+            echo "上传到GitHub时请上传所有分卷。下载后可用如下命令合并："
+            echo "cat ${vsix_file}.part_* > ${vsix_file}"
+            # 删除原始大文件
+            rm -f "$vsix_file"
+            echo "已删除原始大文件: $vsix_file"
+        fi
     else
         echo "错误：下载失败"
         exit 7
