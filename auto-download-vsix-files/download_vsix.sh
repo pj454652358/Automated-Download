@@ -56,9 +56,41 @@ mkdir -p "$download_dir"
 # 构造保存的文件名
 vsix_file="${download_dir}/${publisher}.${extension}-${version}.vsix"
 
+# 检查是否安装了curl
+if ! command -v curl &> /dev/null; then
+    echo "未找到 curl，正在尝试安装..."
+    if command -v apt &> /dev/null; then
+        sudo apt update && sudo apt install -y curl
+    elif command -v yum &> /dev/null; then
+        sudo yum install -y curl
+    else
+        echo "无法自动安装 curl，请手动安装后重试"
+        exit 1
+    fi
+fi
+
 # 获取预期文件大小
-expected_size=$(wget --user-agent="Mozilla/5.0" --spider --server-response "$download_url" 2>&1 | awk '/Content-Length/ {print $2}' | tail -1)
+echo "正在获取文件大小..."
+response_headers=$(curl -s -D - -o /dev/null \
+    -X GET \
+    -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" \
+    -H "Accept: */*" \
+    -H "Accept-Language: zh-CN,zh;q=0.9,en;q=0.8" \
+    -H "Referer: https://marketplace.visualstudio.com/" \
+    -H "Origin: https://marketplace.visualstudio.com" \
+    -H "Sec-Fetch-Dest: empty" \
+    -H "Sec-Fetch-Mode: cors" \
+    -H "Sec-Fetch-Site: same-origin" \
+    "$download_url")
+
+echo "服务器响应头:"
+echo "$response_headers"
+
+expected_size=$(echo "$response_headers" | grep -i content-length | awk '{print $2}' | tr -d '\r')
+echo "解析到的文件大小: $expected_size"
+
 if [[ ! "$expected_size" =~ ^[0-9]+$ ]]; then
+    echo "警告：无法获取有效的文件大小，将设置为0"
     expected_size=0
 fi
 
@@ -70,49 +102,71 @@ else
     retry_count=0
     success=0
     while [ $retry_count -lt $max_retry ]; do
-        echo -e "\n第 $((retry_count+1)) 次尝试下载vsix文件..."
-        wget --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" \
-             --header="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" \
-             --header="Accept-Language: zh-CN,zh;q=0.9,en;q=0.8" \
-             --header="Connection: keep-alive" \
-             --header="Upgrade-Insecure-Requests: 1" \
-             --tries=10 --timeout=30 --waitretry=2 -c -O "$vsix_file" "$download_url"
-        # 检查是否为HTML错误页或下载不完整
-        if file "$vsix_file" | grep -qi html || [ $(stat -c%s "$vsix_file") -lt 10240 ]; then
-            echo "下载失败，返回的是网页或文件过小，可能不是vsix文件，请检查下载链接和参数"
+        echo -e "\n开始下载vsix文件..."
+        # 使用curl下载，完全模拟浏览器行为
+        curl -L \
+             -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" \
+             -H "Accept: */*" \
+             -H "Accept-Language: zh-CN,zh;q=0.9,en;q=0.8" \
+             -H "Referer: https://marketplace.visualstudio.com/" \
+             -H "Origin: https://marketplace.visualstudio.com" \
+             -H "Sec-Fetch-Dest: empty" \
+             -H "Sec-Fetch-Mode: cors" \
+             -H "Sec-Fetch-Site: same-origin" \
+             --connect-timeout 60 \
+             --compressed \
+             --continue-at - \
+             -o "$vsix_file" \
+             "$download_url"
+
+        # 检查下载结果
+        if [ $? -ne 0 ]; then
+            echo "下载失败，重试..."
             rm -f "$vsix_file"
             retry_count=$((retry_count+1))
-            sleep 2
+            sleep 3
             continue
         fi
+
         file_size=$(stat -c%s "$vsix_file")
+        file_size_kb=$((file_size/1024))
+        file_size_mb=$((file_size_kb/1024))
+        
         if [ "$expected_size" -gt 0 ]; then
-            min_size=$((expected_size * 99 / 100))
-            if [ "$file_size" -ge "$min_size" ]; then
+            # 完全匹配文件大小
+            if [ "$file_size" -eq "$expected_size" ]; then
+                echo "文件大小完全匹配: ${file_size_kb}KB"
+                success=1
+                break
+            elif [ "$file_size" -ge "$((expected_size - 1024))" ] && [ "$file_size" -le "$((expected_size + 1024))" ]; then
+                echo "文件大小在可接受范围内: ${file_size_kb}KB (预期: $((expected_size/1024))KB)"
                 success=1
                 break
             else
-                echo "下载文件过小（$file_size 字节），可能未下载完整，重试..."
+                echo "文件大小不匹配（当前: ${file_size_kb}KB，预期: $((expected_size/1024))KB），重试..."
                 rm -f "$vsix_file"
                 retry_count=$((retry_count+1))
-                sleep 2
+                sleep 3
+                continue
             fi
+        elif [ "$file_size" -ge $((10*1024*1024)) ]; then
+            # 如果无法获取预期大小但文件大于10MB，认为下载成功
+            echo "文件大小: ${file_size_mb}MB (${file_size_kb}KB)"
+            success=1
+            break
         else
-            # 如果无法获取 expected_size，保留原有10MB判断
-            if [ "$file_size" -ge $((10*1024*1024)) ]; then
-                success=1
-                break
-            else
-                echo "下载文件过小（$file_size 字节），可能未下载完整，重试..."
-                rm -f "$vsix_file"
-                retry_count=$((retry_count+1))
-                sleep 2
-            fi
+            echo "文件过小（${file_size_mb}MB），可能未下载完整，重试..."
+            rm -f "$vsix_file"
+            retry_count=$((retry_count+1))
+            sleep 3
+            continue
         fi
     done
+
     if [ $success -ne 1 ]; then
         echo "多次尝试后仍未成功下载完整文件，请检查网络或稍后重试。"
-        exit 9
+        rm -f "$vsix_file"
+        exit 1
     fi
     echo "下载成功，文件保存在: $vsix_file"
     # 检查文件大小是否超过100MB
