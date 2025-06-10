@@ -10,11 +10,19 @@ fi
 plugin_keyword="$1"
 specified_version="$2"
 
+echo "正在搜索插件: $plugin_keyword"
+
+post_data=$(jq -n \
+  --arg keyword "$plugin_keyword" \
+  '{"filters":[{"criteria":[{"filterType":8,"value":"Microsoft.VisualStudio.Code"},{"filterType":10,"value":$keyword}],"pageNumber":1,"pageSize":1}]}')
+
 # API请求获取插件信息
 api_response=$(curl -s -X POST \
   -H "Content-Type: application/json" \
-  -d '{"filters":[{"criteria":[{"filterType":8,"value":"Microsoft.VisualStudio.Code"},{"filterType":10,"value":"'$plugin_keyword'"}],"pageNumber":1,"pageSize":1}]}' \
+  -d "$post_data" \
   "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery")
+
+echo "$api_response"
 
 # 解析插件ID
 publisher=$(echo "$api_response" | jq -r '.results[0].extensions[0].publisher.publisherName')

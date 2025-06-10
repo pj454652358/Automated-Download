@@ -14,9 +14,15 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     # 跳过空行和注释
     [[ -z "${line// }" || "${line:0:1}" == "#" ]] && continue
     
-    # 解析插件名和版本号
-    read -r plugin_name version <<< "$line"
-    
+    # 解析插件名和版本号（支持插件名有空格，版本号为最后一个字段且形如数字.数字）
+    if [[ "$line" =~ ^(.+)\ ([0-9][0-9a-zA-Z\.\-]+)$ ]]; then
+        plugin_name="${BASH_REMATCH[1]}"
+        version="${BASH_REMATCH[2]}"
+    else
+        plugin_name="$line"
+        version=""
+    fi
+
     echo -e "\n=========================================="
     echo "开始处理插件: $plugin_name"
     if [ -n "$version" ]; then
