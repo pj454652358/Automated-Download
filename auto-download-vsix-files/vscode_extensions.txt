@@ -2,6 +2,6 @@
 # 例如：
 # python
 # python 2025.7.2025052601
-python
-pylance
-jupyter
+# python
+# pylance
+# jupyter
