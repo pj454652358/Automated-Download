@@ -89,7 +89,7 @@ if [ -n "$publisher_id" ] && [ -n "$extension_id" ]; then
     echo "$download_url"
 
     # 创建下载目录
-    download_dir="​​vscode-offline-vsix"
+    download_dir="vscode-offline-vsix"
     mkdir -p "$download_dir"
 
     # 构造保存的文件名
