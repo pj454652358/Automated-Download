@@ -112,7 +112,8 @@ else
         echo "分卷完成，生成文件："
         ls -lh "${vsix_file}.part_"*
         echo "上传到GitHub时请上传所有分卷。下载后可用如下命令合并："
-        echo "cat ${vsix_file}.part_* > ${vsix_file}"
+        echo "Linux/macOS环境：cat ${vsix_file}.part_* > ${vsix_file}"
+        echo "Windows环境：copy /b ${vsix_file}.part_* ${vsix_file}"
         # 删除原始大文件
         rm -f "$vsix_file"
         echo "已删除原始大文件: $vsix_file"
